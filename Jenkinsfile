@@ -11,13 +11,13 @@ pipeline{
         }
     stage('marchieve artifacts'){
            steps{
-               archiveArtifacts artifacts: '**/target/*.war', followSymlinks: false
+               archiveArtifacts artifacts: '**/*.war', followSymlinks: false
            }
         }
     stage('deploy'){
            steps{
                withCredentials([usernameColonPassword(credentialsId: 'tomcat_creden', variable: '')]) {
-                 sh "curl -v -u harsh:harsh -T /var/lib/jenkins/workspace/petclinic-pipeline/target/java-example.war 'http://3.110.196.93:8181/manager/text/deploy?path=/pipeline_java'" 
+                 sh "curl -v -u harsh:harsh -T /var/lib/jenkins/workspace/petclinic-pipeline/target/java-example.war 'http://3.110.196.93:8181/manager/text/deploy?path=/pipeline_java1'" 
                  }
                 }
             }
