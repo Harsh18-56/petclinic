@@ -17,7 +17,7 @@ pipeline{
     stage('deploy'){
            steps{
                withCredentials([usernameColonPassword(credentialsId: 'tomcat_creden', variable: '')]) {
-                 sh "curl -v -u harsh:harsh -T /var/lib/jenkins/workspace/petclinic-pipeline/target/java-example.war 'http://3.110.196.93:8181/manager/text/deploy?path=/pipeline_java1'" 
+                 sh "curl -v -u harsh:harsh -T /var/lib/jenkins/workspace/petclinic-pipeline 'http://3.110.196.93:8181/manager/text/deploy?path=/pipeline_java1'" 
                  }
                 }
             }
