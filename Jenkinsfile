@@ -11,7 +11,7 @@ pipeline{
         }
     stage('marchieve artifacts'){
            steps{
-               archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+               archiveArtifacts artifacts: '**', followSymlinks: false
            }
         }
     stage('deploy'){
